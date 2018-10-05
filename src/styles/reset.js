@@ -1,6 +1,6 @@
-import { injectGlobal } from "styled-components";
+import { injectGlobal } from 'styled-components';
 
-import { font, fontSize, color, media } from "./constants";
+import { font, fontSize, color, media } from './constants';
 
 export default injectGlobal`
   * {

@@ -1,39 +1,39 @@
 // @flow
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-import { media } from "styles";
+import { media } from 'styles';
 
 type Props = {
-  width: number,
-  isFullWidth?: boolean,
-  isGutterless: boolean,
-  padding?: string
+    width: number,
+    isFullWidth?: boolean,
+    isGutterless: boolean,
+    padding?: string,
 };
 
 const width = (props: Props) => {
-  return props.isFullWidth ?
-    css`
-      max-width: 100%;
-    `
-    : css`
-      max-width: ${props.width || 1440}px;
-    `;
-}
+    return props.isFullWidth
+        ? css`
+              max-width: 100%;
+          `
+        : css`
+              max-width: ${props.width || 1440}px;
+          `;
+};
 
 const isGutterless = (props: Props) =>
-  props.isGutterless &&
-  css`
-    padding: 0;
-  `;
+    props.isGutterless &&
+    css`
+        padding: 0;
+    `;
 
 const padding = (props: Props) =>
-  props.padding ?
-  css`
-    padding:${props.padding};
-  `
-  : css`
-    padding: 0 4%;
-  ` ;
+    props.padding
+        ? css`
+              padding: ${props.padding};
+          `
+        : css`
+              padding: 0 4%;
+          `;
 
 export const Container = styled.div`
   flex: 1;

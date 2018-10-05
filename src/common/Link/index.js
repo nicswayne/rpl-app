@@ -1,14 +1,14 @@
 // @flow
-import React, { type Node } from "react";
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import React, { type Node } from 'react';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
-import { color } from "styles";
+import { color } from 'styles';
 
 type Props = {
-  children: Node,
-  exact?: boolean,
-  to: string
+    children: Node,
+    exact?: boolean,
+    to: string,
 };
 
 const StyledNavLink = styled(NavLink)`
@@ -40,9 +40,9 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 export default function Link({ children, exact, to }: Props) {
-  return (
-    <StyledNavLink exact={exact} to={to} activeClassName="selected">
-      {children}
-    </StyledNavLink>
-  );
+    return (
+        <StyledNavLink exact={exact} to={to} activeClassName="selected">
+            {children}
+        </StyledNavLink>
+    );
 }

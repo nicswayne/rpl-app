@@ -1,34 +1,34 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-import { media } from "styles";
+import { media } from 'styles';
 
 const color = props =>
-  props.color &&
-  `
+    props.color &&
+    `
   color: ${props.color};
 `;
 
 const align = props =>
-  props.align &&
-  `
+    props.align &&
+    `
   text-align: ${props.align};
 `;
 
 const weight = props =>
-  props.weight &&
-  `
+    props.weight &&
+    `
   font-weight: ${props.weight};
 `;
 
 const size = props =>
-  props.size &&
-  `
+    props.size &&
+    `
   font-size: ${props.size};
 `;
 
 const phoneSize = props =>
-  props.phoneSize &&
-  `
+    props.phoneSize &&
+    `
   font-size: ${props.phoneSize};
 `;
 
@@ -41,8 +41,8 @@ const phoneSize = props =>
 // `;
 
 const verticalSpacing = props =>
-  !props.hasVerticalSpacing &&
-  `
+    !props.hasVerticalSpacing &&
+    `
   margin: 0;
 `;
 
@@ -64,29 +64,29 @@ const styles = css`
 `;
 
 export const H1 = styled.h1`
-  ${styles};
+    ${styles};
 `;
 export const H2 = styled.h2`
-  ${styles};
+    ${styles};
 `;
 export const H3 = styled.h3`
-  ${styles};
+    ${styles};
 `;
 export const H4 = styled.h4`
-  ${styles};
+    ${styles};
 `;
 export const H5 = styled.h5`
-  ${styles};
+    ${styles};
 `;
 export const H6 = styled.h6`
-  ${styles};
+    ${styles};
 `;
 export const P = styled.p`
-  ${styles};
+    ${styles};
 `;
 export const Span = styled.span`
-  ${styles};
+    ${styles};
 `;
 export const Small = styled.small`
-  ${styles};
+    ${styles};
 `;

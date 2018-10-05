@@ -1,5 +1,5 @@
 // @flow
-import styled, { keyframes, css } from "styled-components";
+import styled, { keyframes, css } from 'styled-components';
 
 const rotate = keyframes`
   from {
@@ -78,36 +78,36 @@ const dash = keyframes`
 `;
 
 export const Wrapper = styled.div`
-  display: inline-flex;
-  position: relative;
+    display: inline-flex;
+    position: relative;
 
-  ${props =>
-    props.size &&
-    css`
-      height: ${props.size}px;
-      width: ${props.size}px;
-    `};
+    ${props =>
+        props.size &&
+        css`
+            height: ${props.size}px;
+            width: ${props.size}px;
+        `};
 `;
 
 export const Svg = styled.svg`
-  animation: ${rotate} 2s linear infinite;
-  position: absolute;
-  transform: rotate(-90deg);
-  top: 0;
-  left: 0;
-  transform-origin: center;
-  overflow: visible;
+    animation: ${rotate} 2s linear infinite;
+    position: absolute;
+    transform: rotate(-90deg);
+    top: 0;
+    left: 0;
+    transform-origin: center;
+    overflow: visible;
 `;
 
 export const Path = styled.circle`
-  fill: transparent;
-  stroke-dasharray: 282.743px;
-  stroke-width: 10%;
-  animation-name: ${dash};
-  animation-duration: 4s;
-  animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
-  animation-iteration-count: infinite;
-  transform-origin: center;
-  transition-property: stroke;
-  transition: stroke-dashoffset 225ms linear;
+    fill: transparent;
+    stroke-dasharray: 282.743px;
+    stroke-width: 10%;
+    animation-name: ${dash};
+    animation-duration: 4s;
+    animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+    animation-iteration-count: infinite;
+    transform-origin: center;
+    transition-property: stroke;
+    transition: stroke-dashoffset 225ms linear;
 `;

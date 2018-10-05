@@ -1,16 +1,16 @@
 // @flow
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-import { color } from "styles";
+import { color } from 'styles';
 
 export const StyleOverrides = styled.div`
   display: inline-block;
 
   ${props =>
-    props.shouldFitContainer &&
-    css`
-      display: block;
-    `}
+      props.shouldFitContainer &&
+      css`
+          display: block;
+      `}
 
   .DateInput_screenReaderMessage {
     display: none;
