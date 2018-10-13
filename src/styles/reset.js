@@ -1,3 +1,4 @@
+// @flow
 import { injectGlobal } from 'styled-components';
 
 import { font, fontSize, color, media } from './constants';
@@ -20,6 +21,7 @@ export default injectGlobal`
     font-weight: 200;
     line-height: 1.6;
     color: ${color.BLACK};
+    background: ${color.YELLOW_20};
     height: 100%;
 
     ${media.LAPTOP`
@@ -97,12 +99,12 @@ export default injectGlobal`
       left: 0;
       width: 100%;
       height: 1px;
-      background: ${color.GREY_20};
+      background: ${color.YELLOW_20};
       transition: 0.2s cubic-bezier(0.4,0,0.2,1) background;
     }
 
     &:hover:after {
-      background: ${color.GREY_40};
+      background: ${color.YELLOW_40};
     }
   }
 

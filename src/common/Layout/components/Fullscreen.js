@@ -12,7 +12,6 @@ export const Fullscreen = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    padding-bottom: 5%;
 
     ${(props: Props) =>
         props.centerCenter &&
