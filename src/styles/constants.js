@@ -1,4 +1,3 @@
-// @flow
 import { css } from 'styled-components';
 
 export const color = {
@@ -6,7 +5,14 @@ export const color = {
     WHITE: '#ffffff',
     SILVER: '#b3b3b3',
     RED: '#bb0a30',
+    RED_40: '#d85f6e',
+    RED_60: 'd84b5a',
+    RED_80: '#da4444',
     YELLOW: '#ffaa00',
+    YELLOW_10: '#fbebc6',
+    YELLOW_20: '#f8eaa9',
+    YELLOW_40: '#fad162',
+    YELLOW_60: '#ffc43a',
     WARM_SILVER: '#b6b1a9',
     GREY_5: '#f2f2f2',
     GREY_10: '#e5e5e5',
