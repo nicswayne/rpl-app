@@ -18,7 +18,7 @@ export default class Root extends Component<{}> {
                             path="/"
                             render={() => <Redirect to="/dashboard" />}
                         />
-                        <Route exact path="/dashboard" render={Dashboard} />
+                        <Route exact path="/dashboard" component={Dashboard} />
                     </Switch>
                 </Fragment>
             </Fullscreen>

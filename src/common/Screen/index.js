@@ -85,7 +85,7 @@ export default class Screen extends Component<Props, State> {
 
         return (
             <ScreenWrapper>
-                <ScreenHeader scrolledFromTop={scrolledFromTop}>
+                {/* <ScreenHeader scrolledFromTop={scrolledFromTop}>
                     <div ref={this.headerRef}>
                         <Fade duration={200}>
                             <Container
@@ -122,7 +122,7 @@ export default class Screen extends Component<Props, State> {
                             </Container>
                         </Fade>
                     </div>
-                </ScreenHeader>
+                </ScreenHeader> */}
                 <ScreenContent
                     onScroll={this.handleScroll}
                     headerHeight={headerHeight}
