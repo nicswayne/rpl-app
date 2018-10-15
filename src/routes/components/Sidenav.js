@@ -15,6 +15,7 @@ import Icon from 'common/Icon';
 import backIcon from 'styles/icons/back.svg';
 import calendarIcon from 'styles/icons/calendar.svg';
 import contactsIcon from 'styles/icons/contacts.svg';
+import familyIcon from 'styles/icons/family.svg';
 import homeIcon from 'styles/icons/home.svg';
 import { color } from 'styles';
 
@@ -40,6 +41,11 @@ const links = [
         name: 'Schedule',
         link: '/scehdule',
         icon: <Icon src={calendarIcon} color={color.WHITE} size={38} />,
+    },
+    {
+        name: 'Family',
+        link: '/family',
+        icon: <Icon src={familyIcon} color={color.WHITE} size={38} />,
     },
     {
         name: 'Crew Contacts',

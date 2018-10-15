@@ -2,11 +2,10 @@
 import React, { Component } from 'react';
 import { getActors, getUser } from 'data/compiler';
 
-// import Card from 'common/Card';
-import { Col, Row } from 'common/Layout';
 import Screen from 'common/Screen';
 
-import { Card, Wrapper } from './styled';
+import { Wrapper } from './styled';
+import ActorCard from './components/ActorCard';
 
 import type { Crew, Role } from 'data/Crew';
 
@@ -48,24 +47,14 @@ export default class Dashboard extends Component<Props, State> {
     }
 
     render() {
+        const { actors, user } = this.state;
         return (
-            <Screen
-            // title={`${customer.firstName} ${customer.lastName}`}
-            // background={color.GREY_5}
-            >
+            <Screen title={`Welcome ${user.firstName} ${user.lastName}`}>
                 <Wrapper>
-                    <Card padding="30px">
-                        <div>this works</div>
-                    </Card>
-                    <Card padding="30px">
-                        <div>this works</div>
-                    </Card>
-                    <Card padding="30px">
-                        <div>this works</div>
-                    </Card>
-                    <Card padding="30px">
-                        <div>this works</div>
-                    </Card>
+                    {actors.length > 0 &&
+                        actors.map(actor => (
+                            <ActorCard key={actor.id} actor={actor} />
+                        ))}
                 </Wrapper>
             </Screen>
         );

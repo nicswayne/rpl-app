@@ -36,7 +36,7 @@ const base = css`
 const appearance = props => css`
   ${props.appearance === 'primary' &&
       `
-    background-color: ${color.BLACK};
+    background-color: ${color.GREY_60};
     color: #fff;
 
     &:hover {
@@ -48,19 +48,19 @@ const appearance = props => css`
       `
     &[disabled] {
       background-color: ${color.GREY_10};
-      color: ${color.GREY_40};
+      color: ${color.GREY_60};
     }
   `}
 
   ${props.appearance === 'secondary' &&
       `
     background-color: transparent;
-    color: #000;
-    border: 1px solid #000;
+    color: ${color.GREY_80};
+    border: 1px solid ${color.GREY_20};
 
     &:hover {
       border-color: ${color.GREY_60};
-      color: ${color.GREY_60};
+      color: ${color.BLACK};
     }
 
     &[disabled] {
@@ -79,7 +79,7 @@ const appearance = props => css`
 
   ${props.appearance === 'link' &&
       `
-    color: ${color.BLACK};
+    color: ${color.GREY_60};
     padding: 0;
     height: initial;
     line-height: 1.8;
@@ -92,11 +92,11 @@ const appearance = props => css`
     }
 
     &:hover {
-      color: ${color.GREY_60};
+      color: ${color.GREY_80};
 
       svg {
         transform: translateX(1px);
-        color: ${color.GREY_60};
+        color: ${color.GREY_80};
       }
     }
   `}

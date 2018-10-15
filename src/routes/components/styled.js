@@ -8,7 +8,7 @@ export const Aside = styled.aside`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: ${color.RED_40};
+    background-color: ${color.GREY_60};
     color: white;
     width: 310px;
     transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -23,7 +23,7 @@ export const Aside = styled.aside`
 export const StyledButton = styled.button`
     color: white;
     width: 100%;
-    background-color: ${color.RED_40};
+    background-color: ${color.GREY_60};
     border: none;
     font-family: ${font.TYPE};
     font-size: ${fontSize.BASE};
@@ -71,7 +71,7 @@ export const NavItem = styled(NavLink)`
     }
 
     &:hover {
-        background: ${color.RED_80};
+        background: ${color.GREY_80};
 
         &:after {
             background: ${color.WHITE};
@@ -79,7 +79,7 @@ export const NavItem = styled(NavLink)`
     }
 
     &.selected {
-        background-color: ${color.RED_80};
+        background-color: ${color.GREY_80};
 
         &:before {
             transform-origin: left;
@@ -113,7 +113,7 @@ export const NavName = styled.div`
 `;
 
 export const CollapseBar = styled.div`
-    background-color: ${color.RED_40};
+    background-color: ${color.GREY_60};
     box-shadow: 0 -5px 25px 0 rgba(0, 0, 0, 0.3);
     font-size: 0;
     text-align: right;
@@ -122,7 +122,7 @@ export const CollapseBar = styled.div`
     cursor: pointer;
 
     &:hover {
-        background-color: ${color.RED_80};
+        background-color: ${color.GREY_80};
     }
 
     svg {
