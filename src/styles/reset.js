@@ -21,7 +21,7 @@ export default injectGlobal`
     font-weight: 200;
     line-height: 1.6;
     color: ${color.BLACK};
-    background: ${color.YELLOW_20};
+    background: ${color.GREY_10};
     height: 100%;
 
     ${media.LAPTOP`
@@ -99,12 +99,12 @@ export default injectGlobal`
       left: 0;
       width: 100%;
       height: 1px;
-      background: ${color.YELLOW_20};
+      background: ${color.WHITE};
       transition: 0.2s cubic-bezier(0.4,0,0.2,1) background;
     }
 
     &:hover:after {
-      background: ${color.YELLOW_40};
+      background: ${color.GREY_20};
     }
   }
 

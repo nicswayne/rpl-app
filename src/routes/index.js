@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { Fullscreen } from 'common/Layout';
 
-import Dashboard from '../Dashboard';
+import Family from '../Dashboard';
 import Sidenav from './components/Sidenav';
 
 export default class Root extends Component<{}> {
@@ -18,7 +18,7 @@ export default class Root extends Component<{}> {
                             path="/"
                             render={() => <Redirect to="/dashboard" />}
                         />
-                        <Route exact path="/dashboard" render={Dashboard} />
+                        <Route exact path="/family" component={Family} />
                     </Switch>
                 </Fragment>
             </Fullscreen>

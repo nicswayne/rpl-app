@@ -1,6 +1,5 @@
 // @flow
-
-import React, { Component, type Node, createRef } from 'react';
+import React, { Component, type Node } from 'react';
 import { withRouter } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import {
@@ -11,12 +10,12 @@ import {
     CollapseBarWrapper,
 } from './styled';
 
-import { Spacing } from 'common/Layout';
 import Icon from 'common/Icon';
 
 import backIcon from 'styles/icons/back.svg';
 import calendarIcon from 'styles/icons/calendar.svg';
 import contactsIcon from 'styles/icons/contacts.svg';
+import familyIcon from 'styles/icons/family.svg';
 import homeIcon from 'styles/icons/home.svg';
 import { color } from 'styles';
 
@@ -44,6 +43,11 @@ const links = [
         icon: <Icon src={calendarIcon} color={color.WHITE} size={38} />,
     },
     {
+        name: 'Family',
+        link: '/family',
+        icon: <Icon src={familyIcon} color={color.WHITE} size={38} />,
+    },
+    {
         name: 'Crew Contacts',
         link: '/crew',
         icon: <Icon src={contactsIcon} color={color.WHITE} size={38} />,
@@ -59,11 +63,11 @@ export function ListItem({
 }) {
     const { link, name, icon } = item;
     return (
-        //$FlowFixMe
         <NavItem
             to={link}
             activeClassName="selected"
             collapsed={
+                //$FlowFixMe
                 `${isCollapsed}` /* This is being done because of a warning issue with styled components and the router NavLink */
             }
         >
