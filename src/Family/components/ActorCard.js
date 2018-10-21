@@ -6,7 +6,19 @@ import Button from 'common/Button';
 import Text from 'common/Text';
 import { Spacing } from 'common/Layout';
 
-export default function ActorCard({ actor: { firstName, lastName, roles } }) {
+import type { Role } from 'data/Crew';
+
+type Props = {
+    actor: {
+        firstName: string,
+        lastName: string,
+        roles: Array<Role>,
+    },
+};
+
+export default function ActorCard({
+    actor: { firstName, lastName, roles },
+}: Props) {
     return (
         <Card>
             <InfoBlock>

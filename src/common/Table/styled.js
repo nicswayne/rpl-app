@@ -4,7 +4,7 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
 export const StyledTable = styled(ReactTable)`
-    border: none;
+    border: none !important;
     font-size: 14px;
 
     .status {
@@ -58,10 +58,9 @@ export const StyledTable = styled(ReactTable)`
             border-bottom: none;
             border-top: 1px solid #000000;
         }
-        .rt-tr {
+        ${'' /* .rt-tr {
             cursor: pointer;
-        }
-        .rt-th.-sort-desc,
+        } */} .rt-th.-sort-desc,
         .rt-td.-sort-desc {
             -webkit-box-shadow: none;
             -moz-box-shadow: none;
