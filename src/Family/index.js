@@ -2,9 +2,9 @@
 import React, { Component } from 'react';
 import { getActors } from 'data/compiler';
 
+import { Box, Flex } from 'common/Layout';
 import Screen from 'common/Screen';
 
-import { Wrapper } from './styled';
 import ActorCard from './components/ActorCard';
 
 import type { Role } from 'data/Crew';
@@ -38,12 +38,14 @@ export default class Dashboard extends Component<Props, State> {
         const { actors } = this.state;
         return (
             <Screen>
-                <Wrapper>
+                <Flex>
                     {actors.length > 0 &&
                         actors.map(actor => (
-                            <ActorCard key={actor.id} actor={actor} />
+                            <Box percent={33} max={400}>
+                                <ActorCard key={actor.id} actor={actor} />
+                            </Box>
                         ))}
-                </Wrapper>
+                </Flex>
             </Screen>
         );
     }

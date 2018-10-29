@@ -5,7 +5,6 @@ import { StyledTable } from './styled';
 // import Api from "utils/api"
 import Loader from 'common/Loader';
 import { Flex } from 'common/Layout';
-import Text from 'common/Text';
 
 type Columns = {
     Header: string,
@@ -65,7 +64,7 @@ export default class Table extends Component<Props, State> {
 
         return (
             <StyledTable
-                className="-striped"
+                // className="-striped"
                 minRows={0}
                 showPaginationTop={this.state.pages > 0}
                 showPaginationBottom={false}
@@ -107,7 +106,7 @@ export default class Table extends Component<Props, State> {
                 // }}
                 rowCount={rowCount}
                 LoadingComponent={Loading}
-                NoDataComponent={() => <Text>No Data</Text>}
+                NoDataComponent={() => <div>No Data</div>}
             />
         );
     }

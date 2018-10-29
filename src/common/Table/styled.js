@@ -5,7 +5,7 @@ import 'react-table/react-table.css';
 
 export const StyledTable = styled(ReactTable)`
     border: none !important;
-    font-size: 14px;
+    font-size: 18px;
 
     .status {
         display: flex;
@@ -31,7 +31,6 @@ export const StyledTable = styled(ReactTable)`
         }
     }
     .rt-thead {
-        font-family: 'sans-serif';
         font-weight: bold;
         .-header {
             border-top: 3px solid #000000;
@@ -43,7 +42,10 @@ export const StyledTable = styled(ReactTable)`
             text-align: left;
             border-right: none;
             padding: 20px 0;
-            font-size: 15px;
+            font-size: 20px;
+        }
+        .rt-resizable-header-content {
+            margin-left: 20px;
         }
     }
     .rt-tbody {
@@ -51,8 +53,10 @@ export const StyledTable = styled(ReactTable)`
             display: flex;
             align-items: center;
             text-align: left;
-            border-right: none;
-            height: 62px;
+            min-height: 62px;
+            padding: 5px 25px;
+            white-space: unset;
+            border-right: none !important;
         }
         .rt-tr-group {
             border-bottom: none;

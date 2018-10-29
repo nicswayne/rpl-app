@@ -3,7 +3,6 @@ import React from 'react';
 
 import { ButtonGroup, Card, InfoBlock } from '../styled';
 import Button from 'common/Button';
-import Text from 'common/Text';
 import { Spacing } from 'common/Layout';
 
 import type { Role } from 'data/Crew';
@@ -22,32 +21,32 @@ export default function ActorCard({
     return (
         <Card>
             <InfoBlock>
-                <Text type="h2">{firstName}</Text>
+                <h2>{firstName}</h2>
                 <Spacing />
-                <Text type="h4">Roles:</Text>
+                <h4>Roles:</h4>
                 <Spacing height={10} />
                 {roles.length > 0 &&
                     roles.map(role => (
                         <Spacing key={role.id} padding="0 0 0 15px">
-                            <Text>{role.name}</Text>
+                            <h5>{role.name}</h5>
                         </Spacing>
                     ))}
             </InfoBlock>
             <ButtonGroup>
                 <Button appearance="secondary" shouldFitContainer>
-                    <Text type="h5">Script</Text>
+                    <h5>Script</h5>
                 </Button>
                 <Button appearance="secondary" shouldFitContainer>
-                    <Text type="h5">Songs</Text>
+                    <h5>Songs</h5>
                 </Button>
                 <Button appearance="secondary" shouldFitContainer>
-                    <Text type="h5">Costume</Text>
+                    <h5>Costume</h5>
                 </Button>
                 <Button appearance="secondary" shouldFitContainer>
-                    <Text type="h5">Bio</Text>
+                    <h5>Bio</h5>
                 </Button>
                 <Button appearance="secondary" shouldFitContainer>
-                    <Text type="h5">Treasure Box</Text>
+                    <h5>Treasure Box</h5>
                 </Button>
             </ButtonGroup>
         </Card>
