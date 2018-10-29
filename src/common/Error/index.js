@@ -3,7 +3,6 @@ import React, { Component, type Node } from 'react';
 import Fade from 'react-reveal/Fade';
 
 import { Spacing } from 'common/Layout';
-import Text from 'common/Text';
 
 type Props = {
     text: string | Node,
@@ -18,11 +17,9 @@ export default class Error extends Component<Props> {
         return (
             <Fade>
                 <Spacing margin="110px 0 0 110px">
-                    <Text type="h1">{text}</Text>
+                    <h1>{text}</h1>
                     <Spacing />
-                    <Text type="h3" weight={300}>
-                        {subtext}
-                    </Text>
+                    <h3 weight={300}>{subtext}</h3>
                     <Spacing />
                     {children}
                 </Spacing>

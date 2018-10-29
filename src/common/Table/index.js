@@ -5,13 +5,12 @@ import { StyledTable } from './styled';
 // import Api from "utils/api"
 import Loader from 'common/Loader';
 import { Flex } from 'common/Layout';
-import Text from 'common/Text';
 
 type Columns = {
     Header: string,
     accessor: string,
     width?: number,
-    Cell: Object => any,
+    Cell?: Object => any,
 };
 
 type Props = {
@@ -55,11 +54,17 @@ export default class Table extends Component<Props, State> {
     }
 
     render() {
-        const { columns, defaultSort, handleClick, url } = this.props;
+        const {
+            columns,
+            defaultSort,
+            // handleClick,
+            // url
+        } = this.props;
         const { data, loading, pages, rowCount } = this.state;
 
         return (
             <StyledTable
+                // className="-striped"
                 minRows={0}
                 showPaginationTop={this.state.pages > 0}
                 showPaginationBottom={false}
@@ -72,18 +77,18 @@ export default class Table extends Component<Props, State> {
                 pages={pages}
                 loading={loading}
                 columns={columns}
-                getTrProps={(state, rowInfo) => {
-                    if (rowInfo && rowInfo.row) {
-                        return {
-                            onClick: e => {
-                                e.preventDefault();
-                                handleClick && handleClick(rowInfo.row);
-                            },
-                        };
-                    } else {
-                        return {};
-                    }
-                }}
+                // getTrProps={(state, rowInfo) => {
+                //     if (rowInfo && rowInfo.row) {
+                //         return {
+                //             onClick: e => {
+                //                 e.preventDefault();
+                //                 handleClick && handleClick(rowInfo.row);
+                //             },
+                //         };
+                //     } else {
+                //         return {};
+                //     }
+                // }}
                 // manual
                 // onFetchData={(state, instance) => {
                 //   if(!url) return
@@ -101,7 +106,7 @@ export default class Table extends Component<Props, State> {
                 // }}
                 rowCount={rowCount}
                 LoadingComponent={Loading}
-                NoDataComponent={() => <Text>No Data</Text>}
+                NoDataComponent={() => <div>No Data</div>}
             />
         );
     }

@@ -16,6 +16,7 @@ const Wrapper = styled.div`
 
 const Inner = styled.div`
     background: ${color.WHITE};
+    border-radius: 6px;
     height: 100%;
     padding: ${props => props.padding || '60px'};
 

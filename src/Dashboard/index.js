@@ -1,61 +1,123 @@
 // @flow
 import React, { Component } from 'react';
-import { getActors, getUser } from 'data/compiler';
+import moment from 'moment';
+import styled from 'styled-components';
 
+import Tasks from 'data/tasks';
+import Card from 'common/Card';
+import { Box, Flex, Spacing } from 'common/Layout';
+import NavLink from 'common/NavLink';
 import Screen from 'common/Screen';
+import Table from 'common/Table';
 
-import { Wrapper } from './styled';
-import ActorCard from './components/ActorCard';
+import { Padding, ColorBox, RelativeFlex } from './styled';
+import { color } from 'styles';
+import { formatDate } from 'utils/formatters';
 
-import type { Crew, Role } from 'data/Crew';
-
-type Props = {};
-
-type State = {
-    actors: {
-        id: string,
-        first_name: string,
-        last_name: string,
-        guardian: string,
-        role: Array<Role>,
-        dob: date,
-    },
-    user: ?{
-        id: string,
-        first_name: string,
-        last_name: string,
-        phone: string,
-        email: string,
-        type: string,
-        active: boolean,
-        crew: Crew,
+type Row = {
+    value: string,
+    original: {
+        completed: boolean,
     },
 };
 
-export default class Dashboard extends Component<Props, State> {
-    constructor(props: Props) {
-        super(props);
-        this.state = {
-            actors: {},
-            user: {},
-        };
+function getColor(value: string, completed: boolean) {
+    const currentDate = moment(new Date());
+    if (completed) return '';
+    if (moment(value).isBefore(currentDate)) {
+        return `background-color: red; color: white; font-weight: bold;`;
     }
-    componentDidMount() {
-        const user = getUser('945f0a30-d8a1-4424-8935-b35b671e5b82');
-        const actors = getActors('945f0a30-d8a1-4424-8935-b35b671e5b82');
-        this.setState({ user, actors });
+    if (moment(value).isBefore(moment(currentDate).add(1, 'week'))) {
+        return `background-color: yellow; font-weight: bold;`;
     }
+    return '';
+}
 
+const columns = [
+    {
+        Header: '',
+        accessor: 'completed',
+        width: 115,
+        Cell: (row: { value: boolean }) => (
+            <Padding>
+                <input type="checkbox" defaultChecked={row.value} />
+            </Padding>
+        ),
+    },
+    {
+        Header: 'Name',
+        accessor: 'name',
+        width: 225,
+    },
+    {
+        Header: 'Description',
+        accessor: 'description',
+    },
+    {
+        Header: 'Due Date',
+        accessor: 'dueDate',
+        width: 250,
+        Cell: (row: Row) =>
+            row.value ? (
+                <ColorBox
+                    jusitfy="center"
+                    align="center"
+                    backgroundColor={getColor(
+                        row.value,
+                        row.original.completed
+                    )}
+                >
+                    {formatDate(row.value)}
+                </ColorBox>
+            ) : (
+                ''
+            ),
+    },
+];
+
+type Props = {};
+type State = {};
+
+export default class Dashboard extends Component<Props, State> {
     render() {
-        const { actors, user } = this.state;
         return (
-            <Screen title={`Welcome ${user.firstName} ${user.lastName}`}>
-                <Wrapper>
-                    {actors.length > 0 &&
-                        actors.map(actor => (
-                            <ActorCard key={actor.id} actor={actor} />
-                        ))}
-                </Wrapper>
+            <Screen>
+                <Card>
+                    <RelativeFlex>
+                        <Box percent={80}>
+                            <Flex justify="center" align="center">
+                                <h2>Your Tasks</h2>
+                            </Flex>
+                        </Box>
+                        <Box percent={20}>
+                            <ColorBox
+                                width="110px"
+                                jusitfy="center"
+                                align="center"
+                                backgroundColor="background-color: red; color: white; font-weight: bold;"
+                            >
+                                Overdue
+                            </ColorBox>
+                            <ColorBox
+                                width="110px"
+                                jusitfy="center"
+                                align="center"
+                                backgroundColor="background-color: yellow; font-weight: bold;"
+                            >
+                                {'<'} 1 week
+                            </ColorBox>
+                        </Box>
+                    </RelativeFlex>
+                    <Spacing height={50} />
+                    <Table data={Tasks} columns={columns} />
+                    <NavLink
+                        link="/tasks/volunteer"
+                        isCollapsed={false}
+                        name="Volunteer"
+                        color={color.GREY_40}
+                        justifyContent="center"
+                    />
+                </Card>
             </Screen>
         );
     }

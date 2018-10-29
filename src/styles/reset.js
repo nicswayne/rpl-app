@@ -22,6 +22,7 @@ export default injectGlobal`
     line-height: 1.6;
     color: ${color.BLACK};
     background: ${color.GREY_10};
+    ${'' /* background: ${color.WHITE}; */}
     height: 100%;
 
     ${media.LAPTOP`
